@@ -1,0 +1,13 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+nav{
+/* 	 background-color: #7d9fc3; */
+	 background-color: #406083;
+/* 	 background-color: #918571; */
+	 position: sticky;
+     top: 0%;
+     z-index: 100;
+}
