@@ -13,10 +13,10 @@ import javax.servlet.http.HttpSession;
 public class VerifyOTP extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int user_otp = Integer.parseInt(req.getParameter("otp"));
+		int user_otp = Integer.parseInt(req.getParameter("uotp"));
 		
 		HttpSession session = req.getSession();
-		int gen_otp = (int) session.getAttribute("otp");
+		int gen_otp = (int) session.getAttribute("genotp");
 		if (user_otp == gen_otp) {
 			session.setAttribute("changed", "Password Updated Successfully");
 			res.sendRedirect("profile.jsp");

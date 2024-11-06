@@ -24,7 +24,7 @@ public class ChangePassword extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String email = req.getParameter("email");
-		
+		System.out.println("changed");
 		Properties p = new Properties();
 		p.setProperty("mail.smtp.host", "smtp.gmail.com");
 		p.setProperty("mail.smtp.port", "465");
@@ -50,9 +50,9 @@ public class ChangePassword extends HttpServlet {
 			message.setSubject("Here is your One Time Password for changing password in E-Notes Application. It is valid only for 5 minutes.");
 			
 			Random r = new Random();
-			String genotp = ""+r.nextInt(9)+r.nextInt(9)+r.nextInt(9)+r.nextInt(9)+r.nextInt(9)+r.nextInt(9);
-			int otp = Integer.parseInt(genotp);
-			session2.setAttribute("otp", otp);
+			String gen_otp = ""+r.nextInt(9)+r.nextInt(9)+r.nextInt(9)+r.nextInt(9)+r.nextInt(9)+r.nextInt(9);
+			int otp = Integer.parseInt(gen_otp);
+			session2.setAttribute("genotp", otp);
 			
 			message.setText("Your 6-digit OTP is " + otp);
 
